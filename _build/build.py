@@ -348,6 +348,7 @@ def build_project(p, data, prev, nxt):
   <p class="lead">{e(p['summary'])}</p>
   {paras}
   {f'<h2>What it does</h2><ul class="ticks">{hl}</ul>' if hl else ''}
+  {f'<h2>Thank you</h2><blockquote class="thanks">{e(p["thanks"])}</blockquote>' if p.get("thanks") else ''}
   <h2>Built with</h2>
   <ul class="chips big">{chips(p['stack'])}</ul>
 

@@ -50,6 +50,7 @@
   <p class="lead">A low-cost dual-ESP32 and YOLOv8 rig that detects potholes in real time, tracks them, confirms each one with an accelerometer, and logs it with a severity score, GPS position and timestamp.</p>
   <p>Most pothole projects stop at drawing a box on an image. IPDS goes all the way from the camera to a geo-tagged, severity-ranked maintenance log. A pothole is logged only when the camera sees it and the car feels it.</p><p>The work is written up as a research preprint, “Real-Time Pothole Detection Based on Vision-Dominant Sensor Fusion and Dual ESP32 Architecture”, published on Zenodo.</p>
   <h2>What it does</h2><ul class="ticks"><li>YOLOv8m fine-tuned for potholes, reaching mAP@0.5 of 81.7%</li><li>SORT tracking (Kalman filter and Hungarian matching) gives every pothole one stable ID, so it is counted once</li><li>An MPU6050 accelerometer burst confirms the impact before anything is logged</li><li>CSV log with GPS, RTC timestamp, a 0–1 severity score and an annotated video</li><li>Custom sensor-node PCB designed in KiCad, plus a Wokwi simulation and a Colab quick start</li></ul>
+  
   <h2>Built with</h2>
   <ul class="chips big"><li>Python</li><li>YOLOv8</li><li>OpenCV</li><li>SORT</li><li>ESP32</li><li>ESP32-CAM</li><li>MPU6050</li><li>KiCad</li></ul>
 

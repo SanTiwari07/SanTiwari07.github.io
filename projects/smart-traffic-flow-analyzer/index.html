@@ -48,6 +48,7 @@
   <p class="lead">A real-time traffic signal system that counts vehicles with YOLOv8 and SORT and changes green-light timing on the fly based on traffic density, with an ESP32 driving the signal display.</p>
   <p>Conventional traffic signals run on fixed timing plans that ignore real-time traffic. That wastes green time when roads are empty and causes congestion when they are full.</p><p>This system detects and tracks vehicles in a region of interest, averages density over a 5-second sliding window and adjusts the remaining green phase, within safe minimum and maximum bounds.</p>
   <h2>What it does</h2><ul class="ticks"><li>Vehicle detection and tracking with YOLOv8 and SORT</li><li>Dynamic green time from a 5-second sliding average of vehicle density</li><li>Safety constraints keep green time within a configured range (for example 30–90 seconds)</li><li>Signal phase and countdown sent to an ESP32 over TCP for physical LEDs</li></ul>
+  
   <h2>Built with</h2>
   <ul class="chips big"><li>Python</li><li>YOLOv8</li><li>OpenCV</li><li>SORT</li><li>ESP32</li><li>TCP</li></ul>
 
