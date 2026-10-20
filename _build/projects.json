@@ -123,7 +123,6 @@
       "category": "security",
       "featured": true,
       "year": 2026,
-      "event": "Razorpay AI Buildathon 2026",
       "summary": "Arivo (repository: Aviro) is an invariant-governed AI finance controller. It puts deterministic accounting rules around probabilistic AI, so no money moves without authorisation and nothing is auto-matched by mistake.",
       "body": [
         "“Know where every rupee went, or know exactly why you don't.” In Arivo, AI investigates, rules verify, controls protect and humans resolve ambiguity.",
@@ -225,11 +224,10 @@
       "category": "ai",
       "featured": false,
       "year": 2026,
-      "event": "Code Cubicle 6.0",
       "summary": "Smaran is offline-first memory and intelligence for edge fleets. It keeps working when the network vanishes, seals private notes on-device, and uses version vectors to flag clashing field reports instead of silently dropping one.",
       "body": [
         "Picture two maintenance technicians, or two rovers, sent into a network dead zone: a steel-reinforced basement, a remote mine, another planet. Each keeps working and writing reports. When they reconnect, most systems keep the last write and lose the other. Smaran flags the conflict instead.",
-        "Built on Qdrant Edge on every device and Qdrant Server as the fleet hub, for Code Cubicle 6.0 (problem statement: AI-Powered Edge Memory & Intelligence Platform), hosted by Geek Room with Qdrant."
+        "Built on Qdrant Edge on every device and Qdrant Server as the fleet hub."
       ],
       "highlights": [
         "Local vector search keeps working with no network",
@@ -341,11 +339,10 @@
       "tagline": "Autonomous household commerce agent with a deterministic safety gate",
       "category": "ai",
       "year": 2026,
-      "event": "AWS Agents for Humans Hackathon",
       "summary": "Nova is an autonomous household commerce agent: it tracks household consumption, reorders essentials before they run out, and deliberately refuses to spend when stock is healthy.",
       "body": [
         "Keeping track of household inventory and small daily purchases is an invisible, constant burden. Nova takes it over while keeping spending safe.",
-        "The agent runtime is separated from a pre-commit safety gate, so probabilistic reasoning never moves money on its own. Built for the AWS Agents for Humans Hackathon (Track 1: Everyday Agents)."
+        "The agent runtime is separated from a pre-commit safety gate, so probabilistic reasoning never moves money on its own."
       ],
       "highlights": [
         "Predictive restock, for example reordering milk based on live consumption rate",
@@ -371,10 +368,9 @@
       "tagline": "Offline-first shop-audit concept for India's small shops, built for the iQOO 15",
       "category": "tools",
       "year": 2026,
-      "event": "iQOO Hackathon 2026",
       "summary": "Kounter (हर माल गिना हुआ, every item counted) is an offline-first shop-audit concept that turns the iQOO 15's sensors into a delivery counter, expiry gate, freezer remote and Hindi voice assistant for small shops.",
       "body": [
-        "Designed by team HoloTrio for the iQOO Hackathon 2026 (Productivity and Open Innovation track).",
+        "Designed with my team HoloTrio for the iQOO 15, focused on productivity for small shopkeepers.",
         "The repository is a design and interactive prototype: a scroll-driven 3D showcase website plus the engineering specification for the Android app."
       ],
       "highlights": [
