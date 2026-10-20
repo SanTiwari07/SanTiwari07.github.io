@@ -1,0 +1,759 @@
+{
+  "categories": {
+    "security": "Security & Fintech",
+    "vision": "Computer Vision & Embedded",
+    "agri": "Agriculture & Climate",
+    "ai": "AI Systems & Agents",
+    "tools": "Tools & Apps",
+    "hardware": "Hardware & IoT"
+  },
+  "projects": [
+    {
+      "slug": "sudarshan",
+      "name": "Sudarshan",
+      "tagline": "Android banking malware sandbox and threat intelligence platform",
+      "category": "security",
+      "featured": true,
+      "year": 2026,
+      "summary": "Sudarshan analyses suspicious Android banking apps in a Frida sandbox, captures the command-and-control servers they talk to, and gives each one a deterministic 0–100 risk score.",
+      "body": [
+        "Fake banking apps copy the real app's look, ask for the same PIN and drain the account within minutes. Families like Drinik, Xenomorph, SOVA, Anubis, Cerberus, Hydra, Octo and Teabot abuse a single Accessibility permission to read the screen, draw a fake login over the real app and swallow OTP messages. A fresh build usually gets 0 detections on VirusTotal, so a bank's fraud analyst learns nothing useful from antivirus alone.",
+        "Sudarshan takes a suspicious APK, decompiles and repairs it, runs it in a Frida-instrumented Android sandbox, captures the C2 servers it contacts, checks every indicator against threat intelligence feeds and produces a reproducible risk score. A Gemini assistant then answers analyst questions using only the evidence collected for that case."
+      ],
+      "highlights": [
+        "Decompiles APKs with Androguard, APKTool and JADX, and repairs the malformed ZIP and AndroidManifest headers malware authors use to crash analysis tools",
+        "Live Frida hooks on Accessibility Services, overlay APIs (SYSTEM_ALERT_WINDOW) and SMS receivers, with a UI agent that clicks through prompts and anti-emulation tricks",
+        "A mitmproxy sidecar captures C2 domains, IPs and beacons, cross-checked against AlienVault OTX, AbuseIPDB and VirusTotal and mapped to MITRE ATT&CK",
+        "Deterministic Banking Fraud & Cyber Threat Index (BFCI): every score is auditable and reproducible",
+        "Built on one rule: “The Engine Decides, The AI Explains.” The assistant cites case evidence and cannot change the score"
+      ],
+      "stack": [
+        "Python",
+        "Frida",
+        "Androguard",
+        "JADX",
+        "APKTool",
+        "mitmproxy",
+        "Gemini",
+        "Docker",
+        "MITRE ATT&CK"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/Sudarshan",
+        "demo": "https://sudarshan-demo.vercel.app",
+        "video": "https://youtu.be/YG1-zQ9x-k8"
+      },
+      "image": "https://raw.githubusercontent.com/SanTiwari07/Sudarshan/main/assets/screenshots/02_dashboard_cases.png",
+      "image_alt": "Sudarshan dashboard listing analysed Android banking malware cases"
+    },
+    {
+      "slug": "narrareel",
+      "name": "NarraReel",
+      "tagline": "Turn your script into a Reel or Short with your own voice and word-synced captions",
+      "category": "tools",
+      "featured": true,
+      "year": 2026,
+      "summary": "NarraReel turns a script you wrote into a finished Reel, Short or YouTube video, narrated in a free AI voice or your own cloned voice, cut to the exact second, with word-by-word animated captions.",
+      "body": [
+        "Most faceless videos get skipped in the first two seconds: the voice sounds flat, the captions are a wall of text, and the clip runs longer than the format allows. NarraReel fixes those three things for the script you already wrote. It does not generate your content for you.",
+        "It runs on your own computer, with no account, no API key and no watermark."
+      ],
+      "highlights": [
+        "Clone your voice from about 30 seconds of audio, then set the delivery anywhere from calm to hype",
+        "Exact length: ask for 60 seconds and get 60 seconds, by stretching the pauses between sentences first",
+        "Ten caption presets rendered from the same word timings, plus a transparent overlay export for your editor",
+        "Web app in the browser and a command-line interface"
+      ],
+      "stack": [
+        "Python",
+        "FastAPI",
+        "React",
+        "FFmpeg",
+        "Text-to-speech",
+        "Voice cloning"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/NarraReel"
+      },
+      "image": "https://raw.githubusercontent.com/SanTiwari07/SanTiwari07/main/assets/flagship/narrareel-captions.webp",
+      "image_alt": "NarraReel caption styles with each word highlighted as it is spoken"
+    },
+    {
+      "slug": "pothole-detection",
+      "name": "IPDS: Intelligent Pothole Detection System",
+      "short": "Pothole Detection (IPDS)",
+      "tagline": "Real-time pothole detection with YOLOv8, dual ESP32 and accelerometer fusion",
+      "category": "vision",
+      "featured": true,
+      "year": 2026,
+      "summary": "A low-cost dual-ESP32 and YOLOv8 rig that detects potholes in real time, tracks them, confirms each one with an accelerometer, and logs it with a severity score, GPS position and timestamp.",
+      "body": [
+        "Most pothole projects stop at drawing a box on an image. IPDS goes all the way from the camera to a geo-tagged, severity-ranked maintenance log. A pothole is logged only when the camera sees it and the car feels it.",
+        "The work is written up as a research preprint, “Real-Time Pothole Detection Based on Vision-Dominant Sensor Fusion and Dual ESP32 Architecture”, published on Zenodo."
+      ],
+      "highlights": [
+        "YOLOv8m fine-tuned for potholes, reaching mAP@0.5 of 81.7%",
+        "SORT tracking (Kalman filter and Hungarian matching) gives every pothole one stable ID, so it is counted once",
+        "An MPU6050 accelerometer burst confirms the impact before anything is logged",
+        "CSV log with GPS, RTC timestamp, a 0–1 severity score and an annotated video",
+        "Custom sensor-node PCB designed in KiCad, plus a Wokwi simulation and a Colab quick start"
+      ],
+      "stack": [
+        "Python",
+        "YOLOv8",
+        "OpenCV",
+        "SORT",
+        "ESP32",
+        "ESP32-CAM",
+        "MPU6050",
+        "KiCad"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/PotHoleDetection",
+        "website": "https://santiwari07.github.io/PotHoleDetection/",
+        "paper": "https://zenodo.org/records/20760578"
+      },
+      "image": "https://raw.githubusercontent.com/SanTiwari07/PotHoleDetection/main/assets/hardware/assembled-rig.jpg",
+      "image_alt": "Assembled dual-ESP32 pothole detection rig"
+    },
+    {
+      "slug": "arivo",
+      "name": "Arivo",
+      "tagline": "AI finance controller that keeps AI inside deterministic accounting rules",
+      "category": "security",
+      "featured": true,
+      "year": 2026,
+      "event": "Razorpay AI Buildathon 2026",
+      "summary": "Arivo (repository: Aviro) is an invariant-governed AI finance controller. It puts deterministic accounting rules around probabilistic AI, so no money moves without authorisation and nothing is auto-matched by mistake.",
+      "body": [
+        "“Know where every rupee went, or know exactly why you don't.” In Arivo, AI investigates, rules verify, controls protect and humans resolve ambiguity.",
+        "In the flagship safety scenario, Gemini recommends matching a ₹6,00,000 payment with 97% confidence, and Arivo's Control Gate vetoes the match and holds the money in review because the evidence does not meet the rules."
+      ],
+      "highlights": [
+        "Guarantees zero unauthorised capital movement and zero false auto-matches",
+        "Deterministic waterfall matching with a Control Gate that can veto AI recommendations",
+        "Evidence drawer and a grounded “Ask Arivo” copilot",
+        "Benchmark suite and backend tests included"
+      ],
+      "stack": [
+        "Python",
+        "Gemini",
+        "React"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/Aviro",
+        "demo": "https://aviro-razorpay.vercel.app",
+        "video": "https://youtu.be/cCoA_K_DSkM"
+      },
+      "image": "https://raw.githubusercontent.com/SanTiwari07/Aviro/main/docs/images/arivo-dashboard.png",
+      "image_alt": "Arivo AI finance controller dashboard"
+    },
+    {
+      "slug": "gramdrishti",
+      "name": "GramDrishti",
+      "tagline": "Satellite and AI climate intelligence for Indian villages",
+      "category": "agri",
+      "featured": true,
+      "year": 2026,
+      "event": "HackVenture 2026 · 1st place",
+      "summary": "GramDrishti monitors Indian villages using satellite imagery and geospatial data. It tracks water, vegetation, land cover and climate to produce a Village Health Score and local-language recommendations for Gram Panchayats, farmers and NGOs.",
+      "body": [
+        "Climate risks like drought, falling groundwater and vegetation loss build up slowly, and village bodies rarely have the data to see them early. GramDrishti turns free satellite data into a simple score and clear advice in the local language, so action can start before the damage is done.",
+        "Built with my teammate Shweta Patil for HackVenture 2026, a national hackathon by Sponfest, where it won 1st place in the Agritech domain."
+      ],
+      "highlights": [
+        "Satellite NDVI and NDWI monitoring of vegetation and water",
+        "Village Health Score combining water, vegetation, land cover and climate",
+        "Multilingual AI recommendations for Gram Panchayats, farmers and NGOs",
+        "Dashboards for early climate-risk detection"
+      ],
+      "stack": [
+        "TypeScript",
+        "Satellite analytics",
+        "NDVI / NDWI",
+        "Geospatial",
+        "Multilingual AI"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/GramDrishti",
+        "demo": "https://gram-drishti.vercel.app/"
+      },
+      "image": "https://santiwari07.github.io/assets/img/gramdrishti.jpg",
+      "image_alt": "GramDrishti village climate intelligence dashboard",
+      "team": [
+        {
+          "name": "Shweta Patil",
+          "url": "https://www.linkedin.com/in/shweta-patil-5b69b235b/"
+        }
+      ]
+    },
+    {
+      "slug": "bhumi",
+      "name": "Bhumi",
+      "tagline": "Crop health investigation from satellite imagery with tamper-evident field records",
+      "category": "agri",
+      "featured": true,
+      "year": 2026,
+      "summary": "Satellites flag the field. Bhumi says why, names the one check that settles it, and seals the evidence so nobody can quietly change it later.",
+      "body": [
+        "Sentinel-2 photographs every field on Earth about every five days for free, but a red patch is not a diagnosis. It could be cloud, a harvest on schedule, a district-wide heatwave or a failing drip line on one farm. Field officers who look after hundreds of farms cannot visit every alert, so they stop trusting the alerts.",
+        "Monitoring records are also easy to bend: kept in an ordinary database, they can be edited after the fact or claimed twice. Bhumi uses satellite imagery, weather data and verifiable field records to detect crop stress, identify probable causes and recommend the next best field check, and it seals the evidence."
+      ],
+      "highlights": [
+        "Runs on real Sentinel-2 imagery and Open-Meteo weather for 150 fields in Niphad, Nashik (Maharashtra)",
+        "Diagnoses likely causes instead of just flagging lost greenness",
+        "Recommends the single field check that settles each case",
+        "Tamper-evident evidence ledger for monitoring and verification schemes"
+      ],
+      "stack": [
+        "Python",
+        "Sentinel-2",
+        "Open-Meteo",
+        "Geospatial analysis"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/Bhumi",
+        "demo": "https://bhumi-inky.vercel.app"
+      },
+      "image": "https://raw.githubusercontent.com/SanTiwari07/Bhumi/main/docs/screens/02-overview.jpg",
+      "image_alt": "Bhumi overview of monitored fields"
+    },
+    {
+      "slug": "smaran",
+      "name": "Smaran",
+      "tagline": "Offline-first memory and intelligence for edge fleets, built on Qdrant Edge",
+      "category": "ai",
+      "featured": false,
+      "year": 2026,
+      "event": "Code Cubicle 6.0",
+      "summary": "Smaran is offline-first memory and intelligence for edge fleets. It keeps working when the network vanishes, seals private notes on-device, and uses version vectors to flag clashing field reports instead of silently dropping one.",
+      "body": [
+        "Picture two maintenance technicians, or two rovers, sent into a network dead zone: a steel-reinforced basement, a remote mine, another planet. Each keeps working and writing reports. When they reconnect, most systems keep the last write and lose the other. Smaran flags the conflict instead.",
+        "Built on Qdrant Edge on every device and Qdrant Server as the fleet hub, for Code Cubicle 6.0 (problem statement: AI-Powered Edge Memory & Intelligence Platform), hosted by Geek Room with Qdrant."
+      ],
+      "highlights": [
+        "Local vector search keeps working with no network",
+        "Private notes are sealed on-device by construction",
+        "Mathematical version vectors detect and surface conflicting reports",
+        "Mission-control dashboard, measured benchmarks and CI"
+      ],
+      "stack": [
+        "Python",
+        "Qdrant Edge",
+        "Qdrant",
+        "Vector search"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/Smaran",
+        "demo": "https://smaran-wheat.vercel.app"
+      },
+      "image": "https://raw.githubusercontent.com/SanTiwari07/Smaran/main/docs/assets/dashboard_hero.png",
+      "image_alt": "Smaran mission control dashboard"
+    },
+    {
+      "slug": "smart-traffic-flow-analyzer",
+      "name": "Smart Traffic Flow Analyzer",
+      "tagline": "Traffic signals that adapt to live vehicle density using YOLOv8 and ESP32",
+      "category": "vision",
+      "year": 2026,
+      "summary": "A real-time traffic signal system that counts vehicles with YOLOv8 and SORT and changes green-light timing on the fly based on traffic density, with an ESP32 driving the signal display.",
+      "body": [
+        "Conventional traffic signals run on fixed timing plans that ignore real-time traffic. That wastes green time when roads are empty and causes congestion when they are full.",
+        "This system detects and tracks vehicles in a region of interest, averages density over a 5-second sliding window and adjusts the remaining green phase, within safe minimum and maximum bounds."
+      ],
+      "highlights": [
+        "Vehicle detection and tracking with YOLOv8 and SORT",
+        "Dynamic green time from a 5-second sliding average of vehicle density",
+        "Safety constraints keep green time within a configured range (for example 30–90 seconds)",
+        "Signal phase and countdown sent to an ESP32 over TCP for physical LEDs"
+      ],
+      "stack": [
+        "Python",
+        "YOLOv8",
+        "OpenCV",
+        "SORT",
+        "ESP32",
+        "TCP"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/SmartTrafficFlowAnalyzer"
+      }
+    },
+    {
+      "slug": "fielddx",
+      "name": "FieldDx",
+      "tagline": "AI crop diagnostics that tell field officers which farms to visit first",
+      "category": "agri",
+      "year": 2026,
+      "summary": "FieldDx uses satellite imagery to identify crop health changes, evaluate likely causes, rule out alternatives and recommend the most cost-effective field check to verify the diagnosis.",
+      "body": [
+        "A field officer in Nashik's grape and onion belt might see 68 fields that lost green in three weeks, with time to visit perhaps fifteen. Some of that red is a hazy satellite pass, some is a harvest on schedule, and many are one neighbourhood-wide dry spell. Somewhere in there is the plot where disease is actually spreading.",
+        "FieldDx triages those alerts so the officer's day goes to the farms that need it."
+      ],
+      "highlights": [
+        "Detects crop health changes from satellite imagery",
+        "Weighs likely causes and rules out alternatives such as cloud, harvest and regional weather",
+        "Recommends the cheapest field check that confirms the diagnosis",
+        "Designed India-first for smallholder farms"
+      ],
+      "stack": [
+        "Python",
+        "Satellite imagery",
+        "Geospatial analysis"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/FieldDX",
+        "demo": "https://field-dx.vercel.app"
+      },
+      "image": "https://raw.githubusercontent.com/SanTiwari07/FieldDX/main/docs/screenshots/04-fields-map.jpg",
+      "image_alt": "FieldDx map of monitored fields"
+    },
+    {
+      "slug": "insureroute",
+      "name": "InsureRoute",
+      "tagline": "Supply-chain intelligence with weather-aware rerouting and dynamic insurance pricing",
+      "category": "ai",
+      "year": 2026,
+      "summary": "InsureRoute connects predictive routing with financial hedging: it watches real-time weather, predicts transit disruptions, reroutes shipments and prices cargo insurance by actual route risk.",
+      "body": [
+        "Global logistics is fragile and cargo insurance is rigid. Alternate routes are found only after a delay happens, and shippers pay the same premium whether the truck crosses a clear highway or a flooded monsoon zone.",
+        "InsureRoute brings the scattered data together into one view for risk managers."
+      ],
+      "highlights": [
+        "Isolation Forest anomaly detection over weather severity, historical delays and vehicle telemetry",
+        "Algorithmic rerouting before disruptions hit",
+        "Dynamic, actuarial pricing of cargo risk"
+      ],
+      "stack": [
+        "Python",
+        "Machine learning",
+        "Isolation Forest"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/InsureRoute"
+      },
+      "image": "https://raw.githubusercontent.com/SanTiwari07/InsureRoute/main/frontend/src/assets/hero.png",
+      "image_alt": "InsureRoute supply chain intelligence interface"
+    },
+    {
+      "slug": "nova",
+      "name": "Nova",
+      "tagline": "Autonomous household commerce agent with a deterministic safety gate",
+      "category": "ai",
+      "year": 2026,
+      "event": "AWS Agents for Humans Hackathon",
+      "summary": "Nova is an autonomous household commerce agent: it tracks household consumption, reorders essentials before they run out, and deliberately refuses to spend when stock is healthy.",
+      "body": [
+        "Keeping track of household inventory and small daily purchases is an invisible, constant burden. Nova takes it over while keeping spending safe.",
+        "The agent runtime is separated from a pre-commit safety gate, so probabilistic reasoning never moves money on its own. Built for the AWS Agents for Humans Hackathon (Track 1: Everyday Agents)."
+      ],
+      "highlights": [
+        "Predictive restock, for example reordering milk based on live consumption rate",
+        "Intelligent restraint: chooses to do nothing when pantry stock is healthy",
+        "Deterministic safety gate checks every order before it is placed"
+      ],
+      "stack": [
+        "Python",
+        "AWS Strands Agents",
+        "AWS"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/Nova",
+        "demo": "https://nova-peach9899.vercel.app/",
+        "video": "https://youtu.be/zKYA4fBOfJ0"
+      },
+      "image": "https://raw.githubusercontent.com/SanTiwari07/Nova/main/docs/nova_system_architecture.png",
+      "image_alt": "Nova system architecture diagram"
+    },
+    {
+      "slug": "kounter",
+      "name": "Kounter",
+      "tagline": "Offline-first shop-audit concept for India's small shops, built for the iQOO 15",
+      "category": "tools",
+      "year": 2026,
+      "event": "iQOO Hackathon 2026",
+      "summary": "Kounter (हर माल गिना हुआ, every item counted) is an offline-first shop-audit concept that turns the iQOO 15's sensors into a delivery counter, expiry gate, freezer remote and Hindi voice assistant for small shops.",
+      "body": [
+        "Designed by team HoloTrio for the iQOO Hackathon 2026 (Productivity and Open Innovation track).",
+        "The repository is a design and interactive prototype: a scroll-driven 3D showcase website plus the engineering specification for the Android app."
+      ],
+      "highlights": [
+        "Delivery counting, expiry checks and freezer control from one phone",
+        "Hindi voice assistant for shopkeepers",
+        "Works offline-first",
+        "Showcase site with a scroll-driven 3D phone, GSAP, Lenis and a Three.js background"
+      ],
+      "stack": [
+        "Three.js",
+        "GSAP",
+        "JavaScript",
+        "Android (spec)"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/Kounter",
+        "demo": "https://kounter-web.vercel.app/"
+      },
+      "image": "https://raw.githubusercontent.com/SanTiwari07/Kounter/main/assets/screenshots/site_hero.png",
+      "image_alt": "Kounter showcase website hero"
+    },
+    {
+      "slug": "krishisetu",
+      "name": "KrishiSetu",
+      "tagline": "Blockchain-based agricultural supply chain with farm-to-table traceability",
+      "category": "agri",
+      "year": 2025,
+      "summary": "KrishiSetu is an agricultural supply chain management system that uses blockchain to bring transparency, traceability and trust from farm to table.",
+      "body": [
+        "Built by the KrishiSahAI team, KrishiSetu tracks agricultural produce through the supply chain so every step can be traced and trusted."
+      ],
+      "highlights": [
+        "Farm-to-table traceability on a blockchain ledger",
+        "Transparent records for farmers, traders and buyers",
+        "Web app built with TypeScript"
+      ],
+      "stack": [
+        "TypeScript",
+        "Blockchain",
+        "Firebase"
+      ],
+      "links": {
+        "github": "https://github.com/KrishiSahAI/KrishiSetu",
+        "demo": "https://sih-agro-chain.web.app"
+      }
+    },
+    {
+      "slug": "agriadvisor",
+      "name": "AgriAdvisor",
+      "tagline": "Reinforcement learning environment for safe crop pest and disease advice",
+      "category": "agri",
+      "year": 2026,
+      "summary": "AgriAdvisor is an OpenEnv-compatible reinforcement learning environment where AI agents learn to give safe, practical pest and disease advisories grounded in the realities of Indian smallholder farming.",
+      "body": [
+        "Generic AI advice can recommend treatments a smallholder cannot afford or apply safely. AgriAdvisor rewards agents for advice that is safe and practical in real Indian farm conditions."
+      ],
+      "highlights": [
+        "OpenEnv-compatible environment for training and evaluating agents",
+        "Rewards safe, practical advisories",
+        "Focused on Indian smallholder agriculture"
+      ],
+      "stack": [
+        "Python",
+        "Reinforcement learning",
+        "OpenEnv"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/AgriAdvisor"
+      }
+    },
+    {
+      "slug": "plant-disease-detector",
+      "name": "Plant Disease Detector",
+      "tagline": "Leaf-image plant disease detection with EfficientNetB3 and Streamlit",
+      "category": "agri",
+      "year": 2026,
+      "summary": "A deep learning system that detects plant diseases from leaf images using EfficientNetB3 and transfer learning, with an interactive Streamlit web interface.",
+      "body": [
+        "Upload a photo of a leaf and the model classifies the disease, so farmers and students can get a fast first diagnosis."
+      ],
+      "highlights": [
+        "EfficientNetB3 with transfer learning",
+        "Image classification across multiple plant diseases",
+        "Interactive Streamlit web app"
+      ],
+      "stack": [
+        "Python",
+        "Deep learning",
+        "EfficientNetB3",
+        "Transfer learning",
+        "Streamlit"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/PlantDiseaseDetector"
+      },
+      "image": "https://raw.githubusercontent.com/SanTiwari07/PlantDiseaseDetector/main/image.png",
+      "image_alt": "Plant Disease Detector Streamlit interface"
+    },
+    {
+      "slug": "electronics-component-yolo",
+      "name": "Electronics Component Detector",
+      "tagline": "Custom YOLO model that recognises Arduino and IoT components in real time",
+      "category": "vision",
+      "year": 2025,
+      "summary": "A custom-trained YOLO model for real-time detection and classification of common electronic components used in Arduino and IoT projects, reaching 83.8% mAP@0.5.",
+      "body": [
+        "Trained on a curated dataset of components found on a typical maker's bench, the model is suited to both learning and practical use."
+      ],
+      "highlights": [
+        "83.8% mAP@0.5 on the curated dataset",
+        "Real-time detection of common Arduino and IoT parts",
+        "First custom YOLO model trained end to end"
+      ],
+      "stack": [
+        "Python",
+        "YOLO",
+        "Ultralytics",
+        "OpenCV"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/FirstCustomYOLOModel"
+      }
+    },
+    {
+      "slug": "pushup-detection",
+      "name": "Push-Up Counter",
+      "tagline": "Webcam push-up counter using pose detection in the browser",
+      "category": "vision",
+      "year": 2026,
+      "summary": "Push-Up Detection uses a webcam feed to detect human body keypoints and counts push-ups from body movement, entirely in the browser.",
+      "body": [
+        "Pose keypoints are tracked frame by frame, and a simple movement rule counts each full push-up. A companion project, Skeleton Detection, shows the raw PoseNet skeleton."
+      ],
+      "highlights": [
+        "Runs in the browser with just a webcam",
+        "Counts repetitions from body keypoint movement",
+        "Live demo on GitHub Pages"
+      ],
+      "stack": [
+        "JavaScript",
+        "Pose detection",
+        "Webcam"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/PushUpDetection",
+        "demo": "https://santiwari07.github.io/PushUpDetection/"
+      }
+    },
+    {
+      "slug": "self-video-clip-generator",
+      "name": "Self Video Clip Generator",
+      "tagline": "Automatically cut Reels and Shorts out of long YouTube videos",
+      "category": "tools",
+      "year": 2025,
+      "summary": "An AI tool that automatically extracts and generates Reels and Shorts from long-form YouTube videos using a fully Python-based pipeline.",
+      "body": [
+        "Give it a long video and it finds the strongest moments and exports them as short vertical clips ready to post."
+      ],
+      "highlights": [
+        "End-to-end Python pipeline",
+        "Finds and cuts highlight segments automatically",
+        "Exports vertical clips for Reels and Shorts"
+      ],
+      "stack": [
+        "Python",
+        "AI",
+        "Video processing"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/SelfVideoClipGenerator"
+      }
+    },
+    {
+      "slug": "unifit-health",
+      "name": "UniFit Health",
+      "tagline": "AI wellness app for college students powered by Gemini multimodal AI",
+      "category": "tools",
+      "year": 2025,
+      "summary": "UniFit Health is an AI-powered health and wellness tracker for college students that combines water tracking, calorie counting, steps, gym logging, posture analysis and personalised insights.",
+      "body": [
+        "It uses Gemini multimodal AI to analyse food photos, posture images and daily activity, and turns them into clear recommendations."
+      ],
+      "highlights": [
+        "MealScan: calories, macros and advice from a food photo",
+        "PainScan: posture and muscle-strain analysis from a photo",
+        "HydraAI hydration tracking that adapts to activity",
+        "Google sign-in and a personalised plan at onboarding"
+      ],
+      "stack": [
+        "TypeScript",
+        "Gemini",
+        "Google AI Studio",
+        "Vercel"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/UniFitHealth",
+        "demo": "https://unifit-health.vercel.app"
+      }
+    },
+    {
+      "slug": "prepforge",
+      "name": "PrepForge",
+      "tagline": "Adaptive placement preparation for SDE-1 and new-grad roles",
+      "category": "tools",
+      "year": 2026,
+      "summary": "PrepForge is an adaptive, evidence-based preparation platform for fresher (SDE-1 and new-grad) roles at big product companies.",
+      "body": [
+        "It covers DSA, SQL and DBMS, OOP in C++ and Java, operating systems, networks, system design and DevOps, and adapts to what you already know."
+      ],
+      "highlights": [
+        "Covers DSA, SQL, DBMS, OOP, OS, networks, system design and DevOps",
+        "Adaptive, evidence-based practice",
+        "Aimed at SDE-1 and new-grad interviews at product companies"
+      ],
+      "stack": [
+        "TypeScript",
+        "Vercel"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/PrepForge",
+        "demo": "https://prep-forge-omega.vercel.app"
+      }
+    },
+    {
+      "slug": "leetcode-tracker",
+      "name": "LeetCode Tracker",
+      "tagline": "Chrome extension that saves your LeetCode submissions to GitHub automatically",
+      "category": "tools",
+      "year": 2026,
+      "summary": "LeetCode Tracker is a Chrome extension that automatically saves your LeetCode submissions to GitHub, organises problems by topic, and gives you a dashboard of solved problems, recent activity and monthly progress.",
+      "body": [
+        "It powers the LeetCodeSolved repository, where solutions are synced and organised by topic: arrays, dynamic programming, trees, graphs, SQL and more."
+      ],
+      "highlights": [
+        "Automatic commit of every accepted submission",
+        "Problems organised into folders by topic",
+        "Progress dashboard with monthly activity"
+      ],
+      "stack": [
+        "JavaScript",
+        "Chrome Extension",
+        "GitHub API"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/LeetCodeTracker"
+      },
+      "image": "https://raw.githubusercontent.com/SanTiwari07/LeetCodeTracker/main/docs/images/solutions-repo.png",
+      "image_alt": "Solutions repository organised by LeetCode Tracker"
+    },
+    {
+      "slug": "smart-pot",
+      "name": "Smart Pot",
+      "tagline": "ESP32 plant monitor for temperature, humidity and soil moisture",
+      "category": "hardware",
+      "year": 2025,
+      "summary": "A smart plant monitoring system using an ESP32 with DHT22 and soil moisture sensors to track temperature, humidity and soil moisture in real time.",
+      "body": [
+        "The full circuit can be tried in a Wokwi simulation without any hardware."
+      ],
+      "highlights": [
+        "Real-time temperature, humidity and soil moisture readings",
+        "ESP32 with DHT22 and soil moisture sensor",
+        "Runnable Wokwi simulation"
+      ],
+      "stack": [
+        "C++",
+        "ESP32",
+        "DHT22",
+        "Wokwi"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/SmartPot",
+        "demo": "https://wokwi.com/projects/439905054035220481"
+      }
+    },
+    {
+      "slug": "smart-solar-panel",
+      "name": "Smart Solar Panel",
+      "tagline": "Sun-tracking solar panel with Arduino, LDR sensors and a servo",
+      "category": "hardware",
+      "year": 2025,
+      "summary": "A smart solar panel that uses an Arduino UNO, LDR sensors and a servo motor to follow the direction of sunlight and adjust the panel's angle.",
+      "body": [
+        "Two light sensors compare brightness on each side, and the servo turns the panel toward the brighter side to collect more energy."
+      ],
+      "highlights": [
+        "Single-axis sun tracking",
+        "LDR light comparison with servo control",
+        "Arduino UNO build"
+      ],
+      "stack": [
+        "C++",
+        "Arduino UNO",
+        "LDR",
+        "Servo"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/SmartSolarPanel"
+      }
+    },
+    {
+      "slug": "smart-dustbin",
+      "name": "Smart Dustbin",
+      "tagline": "Dustbin that sorts wet and dry waste automatically",
+      "category": "hardware",
+      "year": 2025,
+      "summary": "A smart garbage dustbin that automatically detects and classifies waste as wet or dry using a soil moisture sensor and an ultrasonic sensor.",
+      "body": [
+        "The ultrasonic sensor detects when waste arrives, and the moisture sensor decides which side it belongs to."
+      ],
+      "highlights": [
+        "Automatic wet and dry waste classification",
+        "Ultrasonic presence detection",
+        "Low-cost sensor-based build"
+      ],
+      "stack": [
+        "C++",
+        "Microcontroller",
+        "Ultrasonic sensor",
+        "Soil moisture sensor"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/SmartDustBin"
+      }
+    }
+  ],
+  "more": [
+    {
+      "name": "Skeleton Detection",
+      "desc": "Real-time pose skeleton in the browser with PoseNet, ml5.js and p5.js",
+      "url": "https://santiwari07.github.io/SkeletonDetection/"
+    },
+    {
+      "name": "Resistor Color Code",
+      "desc": "Pick band colours and get the resistance value",
+      "url": "https://santiwari07.github.io/ResistorColorCode/"
+    },
+    {
+      "name": "StockItUp",
+      "desc": "Stock market tracker in vanilla HTML, CSS and JavaScript",
+      "url": "https://santiwari07.github.io/CodeZeroStockItUp/"
+    },
+    {
+      "name": "Taskora",
+      "desc": "Kanban task manager with drag and drop, built with React and TypeScript",
+      "url": "https://taskora-indol.vercel.app"
+    },
+    {
+      "name": "Embedded Processor lab",
+      "desc": "Commented C and C++ programs for the Embedded Processor lab",
+      "url": "https://github.com/SanTiwari07/EP"
+    },
+    {
+      "name": "LeetCode solutions",
+      "desc": "My LeetCode solutions in C++, organised by topic",
+      "url": "https://github.com/SanTiwari07/LeetCodeSolved"
+    },
+    {
+      "name": "PageRank in C",
+      "desc": "Iterative PageRank algorithm in C",
+      "url": "https://github.com/SanTiwari07/PageRankAlgorithm"
+    },
+    {
+      "name": "OOP mini game suite",
+      "desc": "Three number and logic games in C++",
+      "url": "https://santiwari07.github.io/OOPMiniProject/"
+    }
+  ],
+  "ignore": [
+    "SanTiwari07",
+    "SanTiwari07.github.io",
+    "Portfolio",
+    "PICBToDoList",
+    "Musicloader",
+    "SimpleTicTacToe",
+    "SimpleRandomPasswordGenerator",
+    "NumberToWordConverter",
+    "2X2EigenValueFinder",
+    "GPACalculatorSEM2",
+    "CGPACalculatorOfPICT"
+  ]
+}

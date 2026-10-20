@@ -1,0 +1,212 @@
+{
+  "projects": [
+    {
+      "slug": "yyhackathon",
+      "name": "YYHackathon",
+      "tagline": "AgroStruxure™ is proposed to Schneider Electric India as an OEM skid and software package…",
+      "category": "agri",
+      "year": 2026,
+      "summary": "AgroStruxure™ is proposed to Schneider Electric India as an OEM skid and software package that extends EcoStruxure™ (Connected Products → Edge Control → Cloud Apps & Analytics).",
+      "body": [
+        "Solar electricity under PM-KUSUM Component B is free to the farmer, so nothing limits pumping, causing severe groundwater table decline. Once irrigation is right-sized, 63.1% (4,137 kWh/yr) of the 4.8 kWp solar array's output sits idle. Meanwhile, 8.37% of perishable horticulture produce rots at the farm gate due to zero chilling (NABCONS 2022)."
+      ],
+      "highlights": [
+        "Control Plane: Sensors (Soil FDR, Pulse Flow, PV, Temp) → ESP32-S3 Edge Controller → Modbus RTU Commands (CiA402 Profile) → Schneider Altivar ATV320 Solar VFD.",
+        "Power Plane: PV Array (4.8 kWp DC Bus) → Power Conversion / Interlocked Switching Stage → Load A (Solar Pump) / Load B (2 MT PCM Chiller)."
+      ],
+      "stack": [
+        "HTML"
+      ],
+      "links": {
+        "github": "https://github.com/SanTiwari07/YYHackathon"
+      },
+      "auto": true
+    }
+  ],
+  "meta": {
+    "https://github.com/santiwari07/santiwari07": {
+      "pushed": "2026-10-20",
+      "stars": 0
+    },
+    "https://github.com/santiwari07/santiwari07.github.io": {
+      "pushed": "2026-10-20",
+      "stars": 0
+    },
+    "https://github.com/santiwari07/chakra": {
+      "pushed": "2026-10-20",
+      "stars": 0
+    },
+    "https://github.com/santiwari07/nivasa": {
+      "pushed": "2026-10-20",
+      "stars": 0
+    },
+    "https://github.com/santiwari07/leetcodesolved": {
+      "pushed": "2026-10-20",
+      "stars": 0
+    },
+    "https://github.com/santiwari07/leetcodetracker": {
+      "pushed": "2026-10-19",
+      "stars": 0
+    },
+    "https://github.com/santiwari07/bhumi": {
+      "pushed": "2026-10-19",
+      "stars": 0
+    },
+    "https://github.com/santiwari07/ep": {
+      "pushed": "2026-10-19",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/gramdrishti": {
+      "pushed": "2026-10-18",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/fielddx": {
+      "pushed": "2026-10-16",
+      "stars": 0
+    },
+    "https://github.com/santiwari07/sudarshan": {
+      "pushed": "2026-10-15",
+      "stars": 2
+    },
+    "https://github.com/santiwari07/developer-portfolios": {
+      "pushed": "2026-10-14",
+      "stars": 0
+    },
+    "https://github.com/santiwari07/prepforge": {
+      "pushed": "2026-10-13",
+      "stars": 0
+    },
+    "https://github.com/santiwari07/narrareel": {
+      "pushed": "2026-10-12",
+      "stars": 2
+    },
+    "https://github.com/santiwari07/potholedetection": {
+      "pushed": "2026-10-11",
+      "stars": 9
+    },
+    "https://github.com/santiwari07/portfolio": {
+      "pushed": "2026-10-07",
+      "stars": 3
+    },
+    "https://github.com/santiwari07/yyhackathon": {
+      "pushed": "2026-10-04",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/kounter": {
+      "pushed": "2026-10-02",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/smaran": {
+      "pushed": "2026-09-30",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/insureroute": {
+      "pushed": "2026-09-20",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/nova": {
+      "pushed": "2026-09-14",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/aviro": {
+      "pushed": "2026-09-05",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/prometheus": {
+      "pushed": "2026-07-22",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/agriadvisor": {
+      "pushed": "2026-04-12",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/plantdiseasedetector": {
+      "pushed": "2026-04-04",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/pushupdetection": {
+      "pushed": "2026-01-08",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/skeletondetection": {
+      "pushed": "2026-01-05",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/smarttrafficflowanalyzer": {
+      "pushed": "2026-01-04",
+      "stars": 2
+    },
+    "https://github.com/santiwari07/codezerostockitup": {
+      "pushed": "2026-01-04",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/selfvideoclipgenerator": {
+      "pushed": "2025-12-19",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/musicloader": {
+      "pushed": "2025-12-18",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/unifithealth": {
+      "pushed": "2025-12-10",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/picbtodolist": {
+      "pushed": "2025-12-08",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/firstcustomyolomodel": {
+      "pushed": "2025-08-24",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/smartpot": {
+      "pushed": "2025-08-21",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/resistorcolorcode": {
+      "pushed": "2025-08-08",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/oopminiproject": {
+      "pushed": "2025-06-20",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/gpacalculatorsem2": {
+      "pushed": "2025-06-20",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/smartsolarpanel": {
+      "pushed": "2025-05-19",
+      "stars": 2
+    },
+    "https://github.com/santiwari07/smartdustbin": {
+      "pushed": "2025-05-19",
+      "stars": 2
+    },
+    "https://github.com/santiwari07/2x2eigenvaluefinder": {
+      "pushed": "2025-05-18",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/numbertowordconverter": {
+      "pushed": "2025-05-18",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/simplerandompasswordgenerator": {
+      "pushed": "2025-05-18",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/simpletictactoe": {
+      "pushed": "2025-05-18",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/pagerankalgorithm": {
+      "pushed": "2025-05-18",
+      "stars": 1
+    },
+    "https://github.com/santiwari07/cgpacalculatorofpict": {
+      "pushed": "2025-05-18",
+      "stars": 1
+    }
+  }
+}

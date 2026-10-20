@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sudarshan: Android banking malware sandbox and threat intelligence platform | Sanskar Tiwari (santiwari07)</title>
+<meta name="description" content="Sudarshan analyses suspicious Android banking apps in a Frida sandbox, captures the command-and-control servers they talk to, and gives each one a…">
+<meta name="author" content="Sanskar Tiwari">
+<link rel="canonical" href="https://santiwari07.github.io/projects/sudarshan/">
+<meta name="google-site-verification" content="Kd4qy_v7eZxDXbZWmEYi1RAqnSe9DXiDpP45ADvpNmk">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sanskar Tiwari · santiwari07">
+<meta property="og:title" content="Sudarshan: Android banking malware sandbox and threat intelligence platform | Sanskar Tiwari (santiwari07)">
+<meta property="og:description" content="Sudarshan analyses suspicious Android banking apps in a Frida sandbox, captures the command-and-control servers they talk to, and gives each one a…">
+<meta property="og:url" content="https://santiwari07.github.io/projects/sudarshan/">
+<meta property="og:image" content="https://raw.githubusercontent.com/SanTiwari07/Sudarshan/main/assets/screenshots/02_dashboard_cases.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#030303">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareSourceCode", "@id": "https://santiwari07.github.io/projects/sudarshan/#project", "name": "Sudarshan", "description": "Sudarshan analyses suspicious Android banking apps in a Frida sandbox, captures the command-and-control servers they talk to, and gives each one a deterministic 0–100 risk score.", "url": "https://santiwari07.github.io/projects/sudarshan/", "codeRepository": "https://github.com/SanTiwari07/Sudarshan", "keywords": "Python, Frida, Androguard, JADX, APKTool, mitmproxy, Gemini, Docker, MITRE ATT&CK", "dateCreated": "2026", "author": {"@id": "https://santiwari07.github.io/#person"}, "creator": {"@id": "https://santiwari07.github.io/#person"}, "image": "https://raw.githubusercontent.com/SanTiwari07/Sudarshan/main/assets/screenshots/02_dashboard_cases.png"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Sanskar Tiwari", "item": "https://santiwari07.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Projects", "item": "https://santiwari07.github.io/#projects"}, {"@type": "ListItem", "position": 3, "name": "Sudarshan", "item": "https://santiwari07.github.io/projects/sudarshan/"}]}, {"@type": "Person", "@id": "https://santiwari07.github.io/#person", "name": "Sanskar Tiwari", "alternateName": "santiwari07", "url": "https://santiwari07.github.io/"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="logo" href="/">Sanskar Tiwari</a>
+    <nav aria-label="Main">
+      <a href="/#about">About</a>
+      <a href="/#projects">Projects</a>
+      <a href="/#achievements">Awards</a>
+      <a href="https://santiwari07.qzz.io/#contact" rel="noopener">Contact</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="project">
+<div class="wrap narrow">
+  <nav class="crumbs mono" aria-label="Breadcrumb"><a href="/">santiwari07</a> / <a href="/#projects">projects</a> / <span>sudarshan</span></nav>
+  <p class="eyebrow mono">Security &amp; Fintech · 2026</p>
+  <h1>Sudarshan</h1>
+  <p class="tagline">Android banking malware sandbox and threat intelligence platform</p>
+  <p class="byline">Built by <a href="/" rel="author">Sanskar Tiwari</a> <span class="mono">(santiwari07)</span></p>
+  <div class="cta"><a class="btn primary" href="https://sudarshan-demo.vercel.app" rel="noopener">Live demo <span aria-hidden="true">↗</span></a>
+<a class="btn" href="https://youtu.be/YG1-zQ9x-k8" rel="noopener">Watch video <span aria-hidden="true">↗</span></a>
+<a class="btn" href="https://github.com/SanTiwari07/Sudarshan" rel="noopener">Source on GitHub <span aria-hidden="true">↗</span></a></div>
+</div>
+<div class="wrap narrow">
+  <figure class="shot"><img src="https://raw.githubusercontent.com/SanTiwari07/Sudarshan/main/assets/screenshots/02_dashboard_cases.png" alt="Sudarshan dashboard listing analysed Android banking malware cases" decoding="async"></figure>
+  <p class="lead">Sudarshan analyses suspicious Android banking apps in a Frida sandbox, captures the command-and-control servers they talk to, and gives each one a deterministic 0–100 risk score.</p>
+  <p>Fake banking apps copy the real app&#x27;s look, ask for the same PIN and drain the account within minutes. Families like Drinik, Xenomorph, SOVA, Anubis, Cerberus, Hydra, Octo and Teabot abuse a single Accessibility permission to read the screen, draw a fake login over the real app and swallow OTP messages. A fresh build usually gets 0 detections on VirusTotal, so a bank&#x27;s fraud analyst learns nothing useful from antivirus alone.</p><p>Sudarshan takes a suspicious APK, decompiles and repairs it, runs it in a Frida-instrumented Android sandbox, captures the C2 servers it contacts, checks every indicator against threat intelligence feeds and produces a reproducible risk score. A Gemini assistant then answers analyst questions using only the evidence collected for that case.</p>
+  <h2>What it does</h2><ul class="ticks"><li>Decompiles APKs with Androguard, APKTool and JADX, and repairs the malformed ZIP and AndroidManifest headers malware authors use to crash analysis tools</li><li>Live Frida hooks on Accessibility Services, overlay APIs (SYSTEM_ALERT_WINDOW) and SMS receivers, with a UI agent that clicks through prompts and anti-emulation tricks</li><li>A mitmproxy sidecar captures C2 domains, IPs and beacons, cross-checked against AlienVault OTX, AbuseIPDB and VirusTotal and mapped to MITRE ATT&amp;CK</li><li>Deterministic Banking Fraud &amp; Cyber Threat Index (BFCI): every score is auditable and reproducible</li><li>Built on one rule: “The Engine Decides, The AI Explains.” The assistant cites case evidence and cannot change the score</li></ul>
+  <h2>Built with</h2>
+  <ul class="chips big"><li>Python</li><li>Frida</li><li>Androguard</li><li>JADX</li><li>APKTool</li><li>mitmproxy</li><li>Gemini</li><li>Docker</li><li>MITRE ATT&amp;CK</li></ul>
+
+  <aside class="author">
+    <span class="logo-mark" aria-hidden="true">ST</span>
+    <div>
+      <p><strong>Sanskar Tiwari</strong> <span class="mono muted">santiwari07</span></p>
+      <p class="muted">ENTC student at PICT Pune and Software Engineer Intern at MindstriX. I build AI, computer vision and embedded systems.</p>
+      <p class="small"><a href="/">All projects</a> · <a href="https://github.com/SanTiwari07" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/in/santiwari07" rel="me noopener">LinkedIn</a></p>
+    </div>
+  </aside>
+
+  <h2 class="mono small-h">More projects</h2>
+  <ul class="rows"><li class="row">
+  <a href="/projects/arivo/">
+    <span class="row-name">Arivo</span>
+    <span class="row-tag">AI finance controller that keeps AI inside deterministic accounting rules</span>
+    <span class="row-meta mono">2026 · Razorpay AI Buildathon 2026</span>
+  </a>
+</li><li class="row">
+  <a href="/projects/narrareel/">
+    <span class="row-name">NarraReel</span>
+    <span class="row-tag">Turn your script into a Reel or Short with your own voice and word-synced captions</span>
+    <span class="row-meta mono">2026</span>
+  </a>
+</li><li class="row">
+  <a href="/projects/pothole-detection/">
+    <span class="row-name">Pothole Detection (IPDS)</span>
+    <span class="row-tag">Real-time pothole detection with YOLOv8, dual ESP32 and accelerometer fusion</span>
+    <span class="row-meta mono">2026</span>
+  </a>
+</li></ul>
+
+  <nav class="pager" aria-label="Project navigation">
+    <a href="/projects/yyhackathon/"><span class="mono muted">← Previous</span>YYHackathon</a>
+    <a href="/projects/narrareel/" class="next"><span class="mono muted">Next →</span>NarraReel</a>
+  </nav>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-name">Sanskar Tiwari <span class="mono">· santiwari07</span></p>
+    <p class="foot-links"><a href="https://github.com/SanTiwari07" rel="me noopener">GitHub</a> <a href="https://www.linkedin.com/in/santiwari07" rel="me noopener">LinkedIn</a> <a href="https://www.kaggle.com/santiwari07" rel="me noopener">Kaggle</a> <a href="https://zenodo.org/records/20760578" rel="me noopener">Research paper</a> <a href="https://www.youtube.com/channel/UCFehdcKwzbkUomeo2yOG1Mw" rel="me noopener">YouTube</a> <a href="https://www.instagram.com/sanskarmakesstuff/" rel="me noopener">Instagram</a> <a href="https://leetcode.com/u/santiwari07/" rel="me noopener">LeetCode</a> <a href="https://santiwari07.qzz.io/" rel="me noopener">Portfolio</a></p>
+    <p class="muted small">© 2026 Sanskar Tiwari. Projects by santiwari07, ENTC at PICT Pune.</p>
+  </div>
+</footer>
+</body>
+</html>
