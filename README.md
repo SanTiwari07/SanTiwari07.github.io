@@ -12,7 +12,7 @@ from the Actions tab. It:
 1. Lists my public repos and gives a page to every new one that is **not a fork** and **has a description**.
    The page uses the repo description, the first paragraphs and feature bullets of its README, its topics,
    its website link and the first screenshot in the README.
-2. Rebuilds every page and the sitemap, commits any changes, and deploys to GitHub Pages.
+2. Rebuilds every page and the sitemap and deploys to GitHub Pages. Nothing is committed back to the repo.
 
 So for a new project to appear: make the repo public, give it a description (and ideally topics and a
 screenshot in the README). It shows up by the next morning, or straight away if you run the workflow.

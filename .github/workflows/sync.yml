@@ -1,6 +1,7 @@
 name: Sync projects and deploy
 
 # Daily: picks up new public repos, rebuilds every page, and deploys to GitHub Pages.
+# Nothing is committed back; the site is rebuilt from scratch on each run.
 # Also runs on every push to main and from the Actions tab ("Run workflow").
 on:
   schedule:
@@ -10,7 +11,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -31,18 +32,6 @@ jobs:
 
       - name: Build pages
         run: python3 _build/build.py
-
-      - name: Commit changes back to the repo
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No changes"
-          else
-            git commit -m "Sync projects from GitHub"
-            git push
-          fi
 
       - name: Collect site files
         run: |
