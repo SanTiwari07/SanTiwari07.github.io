@@ -174,7 +174,7 @@
         "Multilingual AI"
       ],
       "links": {
-        "github": "https://github.com/SanTiwari07/GramDrishti",
+        "github": "https://github.com/Shwetapatil13/GramDrishti",
         "demo": "https://gram-drishti.vercel.app/"
       },
       "image": "https://santiwari07.github.io/assets/img/gramdrishti.jpg",
@@ -182,7 +182,8 @@
       "team": [
         {
           "name": "Shweta Patil",
-          "url": "https://www.linkedin.com/in/shweta-patil-5b69b235b/"
+          "url": "https://www.linkedin.com/in/shweta-patil-5b69b235b/",
+          "github": "https://github.com/Shwetapatil13"
         }
       ]
     },
@@ -750,6 +751,7 @@
     "NumberToWordConverter",
     "2X2EigenValueFinder",
     "GPACalculatorSEM2",
-    "CGPACalculatorOfPICT"
+    "CGPACalculatorOfPICT",
+    "GramDrishti"
   ]
 }

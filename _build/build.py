@@ -310,7 +310,8 @@ def build_project(p, data, prev, nxt):
         related += [q for q in data["projects"] if q.get("featured") and q is not p and q not in related][: 3 - len(related)]
     rel = "".join(row(q) for q in related)
     team = p.get("team", [])
-    team_links = [f'<a href="{e(m["url"])}" rel="noopener">{e(m["name"])}</a>' if m.get("url") else e(m["name"])
+    team_links = [(f'<a href="{e(m["url"])}" rel="noopener">{e(m["name"])}</a>' if m.get("url") else e(m["name"]))
+                  + (f' <span class="mono">(<a href="{e(m["github"])}" rel="noopener">GitHub</a>)</span>' if m.get("github") else "")
                   for m in team]
     team_line = ""
     if team_links:
@@ -322,7 +323,7 @@ def build_project(p, data, prev, nxt):
                "keywords": ", ".join(p["stack"]), "dateCreated": str(p["year"]),
                "author": {"@id": f"{SITE}/#person"}, "creator": {"@id": f"{SITE}/#person"}}
     if team:
-        code_ld["contributor"] = [{"@type": "Person", "name": m["name"], **({"sameAs": m["url"]} if m.get("url") else {})}
+        code_ld["contributor"] = [{"@type": "Person", "name": m["name"], "sameAs": [u for u in (m.get("url"), m.get("github")) if u]}
                                   for m in team]
     if p.get("image"):
         code_ld["image"] = p["image"]
