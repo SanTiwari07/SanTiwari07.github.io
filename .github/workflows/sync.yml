@@ -1,0 +1,65 @@
+name: Sync projects and deploy
+
+# Daily: picks up new public repos, rebuilds every page, and deploys to GitHub Pages.
+# Also runs on every push to main and from the Actions tab ("Run workflow").
+on:
+  schedule:
+    - cron: "30 1 * * *" # 07:00 IST
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find new repos
+        run: python3 _build/sync.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build pages
+        run: python3 _build/build.py
+
+      - name: Commit changes back to the repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Sync projects from GitHub"
+            git push
+          fi
+
+      - name: Collect site files
+        run: |
+          mkdir _site
+          cp -r index.html 404.html robots.txt sitemap.xml assets projects _site/
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
